@@ -1,4 +1,4 @@
-BMI Calcultor App
+BMI Calculator App
 ==============================
 
 Based on given height(in cm) and weight(in kg) of a person, this app can be used to get BMI and further related health indices.
@@ -16,5 +16,5 @@ Things can be improved
 ------------
 ------------
 1. CI/CD can be used to build the code package using python wheels.
-2. Code coverage tool can be further used to restrict builinding the pacakage if unit test or lint are not as per configured values.
+2. Code coverage tool can be further used to restrict building the package if unit test or lint are not as per configured values.
 3. More command line functions can be added to provide input to the functions and export output to the respective sources to scale this app for larger use case

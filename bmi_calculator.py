@@ -90,7 +90,7 @@ if __name__ == "__main__":
             bmi = p.get_bmi()
             bmi_params = p.get_bmi_paramters(bmi)
 
-            if bmi_params.get("BMI Category") not in ["Underweight", "Normal weight"]:
+            if bmi_params.get("BMI Catagory") not in ["Underweight", "Normal weight"]:
                 overweight_persons.append(person)
 
         except BMICalculationException as e:

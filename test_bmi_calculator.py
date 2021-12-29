@@ -79,14 +79,14 @@ class TestBMICalculator(unittest.TestCase):
         self.assertRaises(BMICalculationException, bmi_obj.get_bmi)
 
     def test_bmi_params_calculation_function(self):
-        """bmi calculation unittest : for BMI paramters function"""
+        """bmi calculation unittest : for BMI parameters function"""
         bmi_obj = BMICalculator({"Gender": "Female", "HeightCm": 166, "WeightKg": 62})
         bmi_value = bmi_obj.get_bmi()
         bmi_params = bmi_obj.get_bmi_paramters(bmi_value)
         self.assertIsInstance(bmi_params, dict)
 
     def test_bmi_params_calculation_function_exception(self):
-        """bmi calculation unittest : for BMI paramters function for exception case"""
+        """bmi calculation unittest : for BMI parameters function for exception case"""
         with self.assertRaises(
             BMICalculationException,
             msg="BMI value cannot be None or zero or negative while evaluating BMI parameters",
@@ -95,17 +95,17 @@ class TestBMICalculator(unittest.TestCase):
             BMICalculator.get_bmi_paramters(None)
 
     def test_bmi_params_calculation_function_for_underweight(self):
-        """bmi calculation unittest : for BMI paramters function and underweight values"""
+        """bmi calculation unittest : for BMI parameters function and underweight values"""
         bmi_params = BMICalculator.get_bmi_paramters(15.0)
         self.assertEqual(bmi_params["BMI Category"], "Underweight")
 
     def test_bmi_params_calculation_function_for_overweightt(self):
-        """bmi calculation unittest : for BMI paramters function and overweight values"""
+        """bmi calculation unittest : for BMI parameters function and overweight values"""
         bmi_params = BMICalculator.get_bmi_paramters(27.2)
         self.assertEqual(bmi_params["BMI Category"], "Overweight")
 
     def test_bmi_params_calculation_function_for_medium_risk(self):
-        """bmi calculation unittest : for BMI paramters function and medium risk individual"""
+        """bmi calculation unittest : for BMI parameters function and medium risk individual"""
         bmi_params = BMICalculator.get_bmi_paramters(33.9)
         self.assertEqual(bmi_params["Health risk"], "Medium risk")
 
