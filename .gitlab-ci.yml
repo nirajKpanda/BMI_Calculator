@@ -1,0 +1,36 @@
+image: alpine
+
+stages:
+  - validate
+  - scan
+  - build
+  - test
+  - package
+
+validate the code:
+  stage: validate
+  script:
+    - isort *.py
+    - black *.py
+
+scan the code:
+  stage: scan
+  script:
+    - pylint bmi_calculator.py
+    - pylint test_bmi_calculator.py
+
+build the code:
+  stage: build
+  script:
+    - pip install -r requirements.txt
+
+test the code:
+  stage: test
+  script:
+    - coverage run -m unittest discover
+    - coverage report -m bmi_calculator.py
+
+package the code:
+  stage: package
+  script:
+    - echo "packaging the bmi calculation code base"
